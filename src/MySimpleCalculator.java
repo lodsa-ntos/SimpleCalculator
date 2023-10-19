@@ -9,10 +9,7 @@ public class MySimpleCalculator extends JFrame {
         // SwingUtilities - A collection of utility methods for Swing
         javax.swing.SwingUtilities.invokeLater(() -> {
 
-            JFrame window = new JFrame();
-
-            window.setSize(300,300);
-            window.setVisible(true);
+            CalculatorGUI calculatorGUI;
 
         });
 
