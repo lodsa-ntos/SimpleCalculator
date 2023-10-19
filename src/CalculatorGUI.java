@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-// PARTE GRÁFICA
+// GRAPHIC PART
 public class CalculatorGUI extends JFrame {
 
 
