@@ -51,6 +51,29 @@ public class CalculatorGUI extends JFrame {
         // Button for clean
         JButton clearOperator = new JButton("C");
 
+        // Add the buttons for numbers from 0 to 9 to the buttons panel
+        buttonPanel.add(button0);
+        buttonPanel.add(button1);
+        buttonPanel.add(button2);
+        buttonPanel.add(button3);
+        buttonPanel.add(button4);
+        buttonPanel.add(button5);
+        buttonPanel.add(button6);
+        buttonPanel.add(button7);
+        buttonPanel.add(button8);
+        buttonPanel.add(button9);
+
+        // Add the operations buttons to the buttons panel
+        buttonPanel.add(addOperator);
+        buttonPanel.add(subtractOperator);
+        buttonPanel.add(multiplyOperator);
+        buttonPanel.add(divideOperator);
+
+        // Add the Button to Clean to the Buttons Panel
+        buttonPanel.add(clearOperator);
+
+
+
 
 
 
