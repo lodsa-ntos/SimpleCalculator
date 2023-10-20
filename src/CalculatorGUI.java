@@ -27,56 +27,46 @@ public class CalculatorGUI extends JFrame {
         display.setEditable(false); // Read-only
 
         // Panel for the buttons
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new GridLayout(4,3));
+        JPanel buttonPanelNumbers = new JPanel();
+        buttonPanelNumbers.setLayout(new GridLayout(4,3));
 
         // Buttons for numbers from 0 to 9
-        JButton button0 = new JButton("0");
-        JButton button1 = new JButton("1");
-        JButton button2 = new JButton("2");
-        JButton button3 = new JButton("3");
-        JButton button4 = new JButton("4");
-        JButton button5 = new JButton("5");
-        JButton button6 = new JButton("6");
-        JButton button7 = new JButton("7");
-        JButton button8 = new JButton("8");
-        JButton button9 = new JButton("9");
+        // Add the buttons for numbers from 0 to 9 to the buttons panel
+        for (int i = 0; i < 10; i++) {
+            JButton button = new JButton(String.valueOf(i));
+            buttonPanelNumbers.add(button);
+        }
+
+        // Panel for the operation buttons
+        JPanel buttonPanelOperation = new JPanel();
+        buttonPanelOperation.setLayout(new GridLayout(3,2));
 
         // Buttons for operation
         JButton addOperator = new JButton("+");
         JButton subtractOperator = new JButton("-");
         JButton multiplyOperator = new JButton("x");
         JButton divideOperator = new JButton("÷");
+        JButton equalsOperator = new JButton("=");
 
         // Button for clean
         JButton clearOperator = new JButton("C");
 
-        // Add the buttons for numbers from 0 to 9 to the buttons panel
-        buttonPanel.add(button0);
-        buttonPanel.add(button1);
-        buttonPanel.add(button2);
-        buttonPanel.add(button3);
-        buttonPanel.add(button4);
-        buttonPanel.add(button5);
-        buttonPanel.add(button6);
-        buttonPanel.add(button7);
-        buttonPanel.add(button8);
-        buttonPanel.add(button9);
-
         // Add the operations buttons to the buttons panel
-        buttonPanel.add(addOperator);
-        buttonPanel.add(subtractOperator);
-        buttonPanel.add(multiplyOperator);
-        buttonPanel.add(divideOperator);
-
-        // Add the Button to Clean to the Buttons Panel
-        buttonPanel.add(clearOperator);
+        buttonPanelOperation.add(addOperator);
+        buttonPanelOperation.add(subtractOperator);
+        buttonPanelOperation.add(multiplyOperator);
+        buttonPanelOperation.add(divideOperator);
+        buttonPanelOperation.add(equalsOperator);
+        buttonPanelOperation.add(clearOperator);
 
         // Add the calculator display at the top of the window
         add(display, BorderLayout.NORTH);
 
         // Add the button panel to the center of the window
-        add(buttonPanel, BorderLayout.CENTER);
+        add(buttonPanelNumbers, BorderLayout.WEST);
+
+        // Add the button panel to the center of the window
+        add(buttonPanelOperation, BorderLayout.EAST);
 
         // Open the calculator window
         setVisible(visibility);
