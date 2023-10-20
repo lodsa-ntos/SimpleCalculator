@@ -28,7 +28,7 @@ public class CalculatorGUI extends JFrame {
 
         // Panel for the buttons
         JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new GridLayout(4,4));
+        buttonPanel.setLayout(new GridLayout(4,3));
 
         // Buttons for numbers from 0 to 9
         JButton button0 = new JButton("0");
@@ -72,11 +72,11 @@ public class CalculatorGUI extends JFrame {
         // Add the Button to Clean to the Buttons Panel
         buttonPanel.add(clearOperator);
 
+        // Add the calculator display at the top of the window
+        add(display, BorderLayout.NORTH);
 
-
-
-
-
+        // Add the button panel to the center of the window
+        add(buttonPanel, BorderLayout.CENTER);
 
         // Open the calculator window
         setVisible(visibility);
