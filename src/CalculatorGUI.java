@@ -1,21 +1,21 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 // GRAPHIC PART
 public class CalculatorGUI extends JFrame {
 
-    String titleOfWindow;
-    int width;
-    int height;
-    boolean visibility;
-    Dimension dimension;
+    private final JTextField display;
 
     public CalculatorGUI() {
 
-        this.titleOfWindow = "Simple Calculator";
-        this.width = 300;
-        this.height = 300;
-        this.visibility = true;
+        // Instance
+        CalculatorLogic calculatorLogic = new CalculatorLogic();
+        String titleOfWindow = "Simple Calculator";
+        int width = 300;
+        int height = 300;
+        boolean visibility = true;
 
         setTitle(titleOfWindow); // Title
         setSize(width, height); // Size
@@ -24,7 +24,7 @@ public class CalculatorGUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Calculator display
-        JTextField display = new JTextField(20);
+        display = new JTextField(20);
         display.setEditable(false); // Read-only
         display.setVisible(true);
 
@@ -38,19 +38,36 @@ public class CalculatorGUI extends JFrame {
             JButton button = new JButton(String.valueOf(i));
             buttonPanelNumbers.add(button);
 
-            button.addActionListener(e -> {
-                String number = button.getText();
-                display.setText(display.getText() + number);
+            button.addActionListener(new ActionListener() {
+                final String number = button.getText();
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    display.setText(display.getText() + number);
+                }
             });
         }
 
         // Button 0
-        JButton button0 = new JButton("0");
-        buttonPanelNumbers.add(button0);
+        JButton buttonZero = new JButton("0");
+        buttonPanelNumbers.add(buttonZero);
+        buttonZero.addActionListener(new ActionListener() {
+            final String number = buttonZero.getText();
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + number);
+            }
+        });
 
-        // Button Ponto Final
-        JButton buttonPonto = new JButton(".");
-        buttonPanelNumbers.add(buttonPonto);
+        // Button final point
+        JButton buttonPoint = new JButton(".");
+        buttonPanelNumbers.add(buttonPoint);
+        buttonPoint.addActionListener(new ActionListener() {
+            final String number = buttonPoint.getText();
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + number);
+            }
+        });
 
         // Panel for the operation buttons
         JPanel buttonPanelOperation = new JPanel();

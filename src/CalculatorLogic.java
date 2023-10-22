@@ -5,9 +5,7 @@ public class CalculatorLogic extends JFrame {
     double num1, num2;
     String operator;
 
-
     public CalculatorLogic() {}
-
 
     public void setNum1(double num1) {
         this.num1 = num1;
@@ -22,7 +20,6 @@ public class CalculatorLogic extends JFrame {
     }
 
     public double performCalculation() {
-
         return 0;
     }
 }
