@@ -8,6 +8,7 @@ public class CalculatorGUI extends JFrame {
     int width;
     int height;
     boolean visibility;
+    Dimension dimension;
 
     public CalculatorGUI() {
 
@@ -25,17 +26,31 @@ public class CalculatorGUI extends JFrame {
         // Calculator display
         JTextField display = new JTextField(20);
         display.setEditable(false); // Read-only
+        display.setVisible(true);
 
         // Panel for the buttons
         JPanel buttonPanelNumbers = new JPanel();
         buttonPanelNumbers.setLayout(new GridLayout(4,3));
 
-        // Buttons for numbers from 0 to 9
+        // Buttons for numbers from 1 to 9
         // Add the buttons for numbers from 0 to 9 to the buttons panel
-        for (int i = 0; i < 10; i++) {
+        for (int i = 1; i < 10; i++) {
             JButton button = new JButton(String.valueOf(i));
             buttonPanelNumbers.add(button);
+
+            button.addActionListener(e -> {
+                String number = button.getText();
+                display.setText(display.getText() + number);
+            });
         }
+
+        // Button 0
+        JButton button0 = new JButton("0");
+        buttonPanelNumbers.add(button0);
+
+        // Button Ponto Final
+        JButton buttonPonto = new JButton(".");
+        buttonPanelNumbers.add(buttonPonto);
 
         // Panel for the operation buttons
         JPanel buttonPanelOperation = new JPanel();

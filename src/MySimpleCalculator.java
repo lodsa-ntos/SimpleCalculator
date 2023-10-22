@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 
 public class MySimpleCalculator extends JFrame {
 
@@ -8,11 +7,8 @@ public class MySimpleCalculator extends JFrame {
         // Create the Calculator Window
         // SwingUtilities - A collection of utility methods for Swing
         javax.swing.SwingUtilities.invokeLater(() -> {
-
             CalculatorGUI calculatorGUI = new CalculatorGUI();
-
-
-
+            CalculatorLogic calculatorLogic = new CalculatorLogic();
         });
 
     }
